@@ -9,7 +9,8 @@ import java.util.List;
 @Repository
 public class ListCarsDao implements Dao {
 
-    private CarList carList;
+
+    private CarList carList; //connection
 
     public ListCarsDao() {}
 
@@ -18,6 +19,7 @@ public class ListCarsDao implements Dao {
         this.carList = carList;
     }
 
+    //get from db
     @Override
     public List<Car> getCars(int count) {
         return carList.getCars(count);

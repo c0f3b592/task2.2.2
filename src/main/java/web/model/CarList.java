@@ -3,7 +3,9 @@ package web.model;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+//database
 @Component
 public class CarList {
 
@@ -19,14 +21,9 @@ public class CarList {
     }
 
     public List<Car> getCars(int inputCount) {
-        int count = inputCount < 5 ? inputCount : 5;
-        if (count == 5) {
-            return carList;
-        }
-        List<Car> resultList = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            resultList.add(carList.get(i));
-        }
-        return resultList;
+        int count = inputCount < 5 && inputCount > -1 ? inputCount : 5;
+        return carList.stream()
+                .limit(count)
+                .collect(Collectors.toList());
     }
 }
