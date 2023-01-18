@@ -9,9 +9,7 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService {
 
-    private Dao dao;
-
-    public CarServiceImpl() {}
+    private final Dao dao;
 
     @Autowired
     public CarServiceImpl(Dao dao) {

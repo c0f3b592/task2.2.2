@@ -9,10 +9,7 @@ import java.util.List;
 @Repository
 public class ListCarsDao implements Dao {
 
-
-    private CarList carList; //connection
-
-    public ListCarsDao() {}
+    private final CarList carList; //connection
 
     @Autowired
     public ListCarsDao(CarList carList) {
